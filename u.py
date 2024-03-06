@@ -1,5 +1,5 @@
 import os
-os.environ["OPEN_API_KEY"] = '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'
+os.environ["OPEN_API_KEY"] = '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'
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain_openai import OpenAI
@@ -19,3 +19,17 @@ prompt_template_resto = PromptTemplate(
     "Person foodtype: {foodtype}\n"
 )
 chain = LLMChain(llm=llm_restro,prompt=prompt_template_resto)
+chain_resto = LLMChain(llm=llm_restro,prompt=prompt_template_resto)
+input_data = {
+    'age' : 60,
+    'gender' : 'male', 
+    'height' : 120,
+    'veg_or_nonveg' : 'veg',
+    'disease' : 'aneamia',
+    'region' : 'india',
+    'allergies' : 'Latex Allergy',
+    'foodtype' : 'Fruits'
+}
+
+results = chain_resto.run(input_data)
+SyntaxWarning
