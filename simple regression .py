@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv('C:/Users/Sundram Vaths/Downloads/Machine Learning A-Z (Codes and Datasets)-20240307T045539Z-001.zip/Machine Learning A-Z (Codes and Datasets)/Part 2 - Regression/Section 4 - Simple Linear Regression/Python/Salary_Data.csv')
+dataset = pd.read_csv('D:/Machine Learning A-Z (Codes and Datasets)/Part 2 - Regression/Section 4 - Simple Linear Regression/Python/Salary_Data.csv')
 
 X = dataset.iloc[:,:-1].values
 y = dataset.iloc[:,1].values
@@ -14,3 +14,4 @@ from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
+y_pred = regressor.predict(X_test)
